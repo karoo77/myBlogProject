@@ -28,6 +28,8 @@ class Post(BaseModel):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     content = models.TextField()
+    start_time = models.DateTimeField(blank=True, null=True)
+    end_time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
         db_table = 'posts'
