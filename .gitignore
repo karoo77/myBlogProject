@@ -1,0 +1,9 @@
+venv/
+.idea/
+Media/
+
+
+**/__pycache__/
+*.pyc
+
+myProject/local_settings.py
