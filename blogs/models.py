@@ -1,3 +1,5 @@
+from time import timezone
+
 from django.contrib.auth.models import User
 from django.db import models
 
@@ -38,3 +40,10 @@ class Post(BaseModel):
 
     def str(self):
         return self.title
+
+    def is_active_now(self):
+        now = timezone.now()
+        if self.start_time is None or self.start_time <= now:
+            if self.end_time is None or self.end_time >= now:
+                return True
+        return False
